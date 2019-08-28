@@ -10,6 +10,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import cucumber.api.java.en.Given;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class GenericSteps {
 
@@ -96,6 +98,25 @@ public class GenericSteps {
          utility.captureScreenShot(driver);
           
     }
+    
+    
+    @Given("^user selects option \"([^\"]*)\" from the radio button \"([^\"]*)\"$")
+    public void user_selects_option_from_the_radio_button(String radiobutton_value, String radiobutton_name) throws Throwable {
+    	
+        
+    }
+
+    @Given("^user validates \"([^\"]*)\" field with expected value as \"([^\"]*)\"$")
+    public void user_validates_field_with_expected_value_as(String actual, String expected) throws Throwable {
+    	utility.captureScreenShot(driver);
+    	actual = actual+ "_value";
+    	String actual_argument = wait.until(ExpectedConditions.visibilityOfElementLocated
+   			 (parser.getbjectLocator(actual))).getText();
+    
+    		Assert.assertEquals(expected, actual_argument);
+    		
+    }
+   
 
     @Given("^user waits for \"(.*?)\" seconds$")
     public void user_waits_for_seconds(long arg1) throws Throwable 
@@ -104,8 +125,6 @@ public class GenericSteps {
     	Thread.sleep(arg1);
         
     } 
-
-    
     
 	
 }

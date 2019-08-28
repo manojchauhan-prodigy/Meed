@@ -22,7 +22,7 @@ import cucumber.api.junit.Cucumber;
  )
  
 public class TestRunner {
- 
+
 	@AfterClass
 	public static void setup()
 	{	

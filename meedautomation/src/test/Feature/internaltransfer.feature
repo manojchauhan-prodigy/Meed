@@ -18,12 +18,16 @@ Scenario Outline: Verify Meed customer is able to successfully able to make inte
    And user clicks on button "NEXT"
    And user enters text "<Amount>" in textbox "Amount"
    And user selects option "Monthly"  from the dropdown "Frequency"
+   And user waits for "2" seconds
    And user clicks on button "NEXT"
    And user clicks on button "CONFIRM"
+   And user waits for "2" seconds
+   And user validates "Amount" field with expected value as "$<Amount>"
+   And user validates "Frequency" field with expected value as "Monthly"
+   
    
 	Examples: 
 	|	Platform	|	Email													|	Username			|	Password		|	Amount	|
-	|	Android		|	manoj.chauhan@prodigylabs.net	|	mchauhan9189	|	Qwerty123!!	|	3.00				|
-
+	|	Android		|	manoj.chauhan@prodigylabs.net	|	mchauhan9189	|	Qwerty123!!	|	50.66		|
 	
 	
