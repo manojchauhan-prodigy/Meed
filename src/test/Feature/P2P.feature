@@ -17,11 +17,9 @@ Given user launches the app in "<Platform>" device
    And user waits for "15" seconds
    And user wats for "15" seconds
    
-   And user enters text "<Recipient>" in textbox "Filter_by_nickname_or_email"
-   
-   
-   And user waits for "15" seconds
+  # And user enters text "<Recipient>" in textbox "Filter_by_nickname_or_email"
  
+   And user waits for "15" seconds
    
      
   Examples: 

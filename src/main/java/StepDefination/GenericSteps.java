@@ -186,8 +186,9 @@ public class GenericSteps {
 
         for (int i=0; i<elements.size();i++)
         {
-          System.out.println("Radio button text:" + elements.get(i).getAttribute("text"));
+          System.out.println("button text:" + elements.get(i).getAttribute("text"));
           elements.get(1).sendKeys("meedqe75@yopmail.com");
+          elements.get(1).click();
          
         }
     }
