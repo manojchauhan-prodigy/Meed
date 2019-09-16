@@ -36,12 +36,15 @@ public class GenericSteps {
         File fs = new File (f,"app-debug.apk");
       
         caps.setCapability("deviceName", "Nexus S");
-        caps.setCapability("udid", "emulator-5554");               //DeviceId from "adb devices" command
+         caps.setCapability("udid", "emulator-5554");               //DeviceId from "adb devices" command
+        
         caps.setCapability("platformName", "Android");
 //        caps.setCapability("app", "fs.getAbsolutePath()");
 //        caps.setCapability("app", "fs.getAbsolutePath()");
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("platformVersion", "7.0");
+     
+        
         caps.setCapability("skipUnlock","true");
        caps.setCapability("appPackage", "com.uat.meedbankingclub");
         caps.setCapability("appActivity","com.uat.meedbankingclub.MainActivity");
@@ -178,6 +181,25 @@ public class GenericSteps {
     	Thread.sleep(arg1);
     	utility.captureScreenShot(driver);
     } 
+    
+    
+    @Given("^user enters text in textbox with index \"([^\"]*)\"$")
+    public void user_enters_text_in_textbox_with_index(int index) throws Throwable {
+    	List<MobileElement> elements = driver.findElements(By.className("android.widget.EditText"));
+        System.out.println("Number of elements:" +elements.size());
+
+        for (int i=0; i<elements.size();i++)
+        {
+          System.out.println("button text:" + elements.get(i).getAttribute("text"));
+          elements.get(index).sendKeys("meedqe75@yopmail.com");
+          elements.get(index).click();
+         
+        }
+    }
+    
+    
+    
+    
     
     @Given("^user wats for \"([^\"]*)\" seconds$")
     public void user_wats_for_seconds(String arg1) throws Throwable {

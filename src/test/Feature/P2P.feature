@@ -1,6 +1,6 @@
 #Author: manoj.chauhan@prodigylabs.net
-#Keywords Summary : Android Automation POC
-#Feature: Internal Transfer
+#Keywords Summary : Android Automation  
+#Feature: P2P
 #Scenario: #NA
 
 Feature: P2P Transfer  
@@ -16,10 +16,8 @@ Given user launches the app in "<Platform>" device
    And user clicks on button "P2P_TRANSFER"
    And user waits for "15" seconds
    And user wats for "15" seconds
+   And user enters text in textbox with index "1"
    
-  # And user enters text "<Recipient>" in textbox "Filter_by_nickname_or_email"
- 
-   And user waits for "15" seconds
    
      
   Examples: 
